@@ -1,6 +1,11 @@
 # Smart Launcher reorganiser – AI prompt for tidying your drawer & home screen
 
-A prompt for an AI that can open files and run Python. You give it your Smart Launcher backup (.slbk), answer a few questions, and it gives you a new backup with a tidier app drawer and home screen.
+Two ways to tidy your Smart Launcher app drawer and home screen from a backup (.slbk):
+
+- **AI prompt (tested):** `SmartLauncher_Reorganiser_agent.md`, for an AI that can open files and run Python. This is the main version, and everything below describes it unless stated otherwise.
+- **Python scripts (untested):** `SmartLauncher_Reorganiser_untested_python.zip`, for chat models that can't open files or run code. See the last section.
+
+The AI prompt version: you give the AI your backup, answer a few questions, and it gives you a new backup with a tidier app drawer and home screen.
 
 Unofficial. Built with AI assistance and tested on a real phone. Your original backup is never changed, so keep it as a fallback.
 
@@ -24,11 +29,11 @@ It doesn't touch widgets, custom icons or anything else in the backup. It checks
 
 ## Which AI
 
-It has to accept the backup (it's a zip: rename it to .zip if the upload is refused), extract it, run code and hand back a new file.
+This applies to the AI prompt version. It has to accept the backup (it's a zip: rename it to .zip if the upload is refused), extract it, run code and hand back a new file.
 
 - Claude and Grok worked in testing.
 - ChatGPT, Copilot and others may work, depending on their current limits. Not tested.
-- Gemini: its app limits zips to 10 files and a backup has more, so it probably won't work.But I'm not sure, you might have different results on various tier models. 
+- Gemini: its app limits zips to 10 files and a backup has more, so it probably won't work. I'm not sure though, results may differ per model and plan.
 
 ## Privacy
 
@@ -61,13 +66,20 @@ Menus differ per phone brand. Search your phone's brand plus "safe mode" or "cha
 
 A tab's icon comes from a hidden category ID, not from its name. Most IDs give a blank folder, including `ai`, `money`, `health` and `photo`. Use `education` for AI, `finance` for money, `fitness` for health and `camera` for photos. The prompt has the full list and picks them for you.
 
+## Python scripts version (untested)
 
-## SmartLauncher_Reorganiser_untested_python.zip 
+File: `SmartLauncher_Reorganiser_untested_python.zip`. For chat models that can't open files or run code. You run two small scripts on your computer and paste a report into the chat.
 
-The Python version does the same job as the AI prompt, but without needing an AI that can run code. The chat only plans, and two small scripts do the file work on your computer.
-Inspect (1_inspect.bat or slb_inspect.py): reads your backup and prints a text report of your apps, home screen, dock, and launch counts. Nothing is changed.
-Chat: you paste the report into any chat model. It groups your apps into tabs, proposes the home screen and thumb order, and writes a plan.json file.
-Apply (2_apply.bat or slb_apply.py): runs that plan on your original backup and writes a new backup_v1.slbk. It checks the result first. If a check fails, it stops and writes nothing.
-Restore backup_v1.slbk in Smart Launcher.
-Optional: 0_scrub_location.bat removes the last known location from a copy of the backup before you share it.
-Two limits: it only changes the drawer order and tabs, and home screen moves and folders. It doesn't create a dock and leaves widgets and custom icons alone. It needs Python 3.8 or newer on your computer.
+Untested as a whole: the scripts were tested on one real backup, but the chat step has not been tested end to end with a chat model. Keep your original backup.
+
+How it works:
+
+1. Unzip it. Open a chat with any model and paste in `PROMPT_for_chat.md`.
+2. Inspect: run `1_inspect.bat` (or `python slb_inspect.py backup.slbk`). It prints a report of your apps, home screen, dock and launch counts. Nothing is changed. Paste the report into the chat.
+3. The chat groups your apps into tabs, proposes the home screen and thumb order, and writes a `plan.json` file. Save it next to the scripts.
+4. Apply: run `2_apply.bat` (or `python slb_apply.py backup.slbk plan.json`) on your original backup. It writes a new `backup_v1.slbk` and checks it first. If a check fails, it stops and writes nothing.
+5. Restore `backup_v1.slbk` in Smart Launcher.
+
+Optional: `0_scrub_location.bat` removes the last known location from a copy of the backup.
+
+Limits: it changes tabs, drawer order, hidden apps, home screen moves and folders. It doesn't create a dock and leaves widgets and custom icons alone. It needs Python 3.8 or newer. The zip has its own README.txt with more detail.
