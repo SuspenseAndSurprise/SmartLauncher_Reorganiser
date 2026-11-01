@@ -93,6 +93,28 @@ Dev, Smart Home and Security have no icon ID, so suggest folding them into Tools
 
 If two tabs want the same ID, give the better fit to the larger tab and pick the next-best free ID for the other. Only if nothing fits, tell the user that tab will get a folder icon and ask whether that's OK.
 
+## Sorting apps into tabs (keep results consistent)
+
+Do the mapping the same way every run:
+1. Start from each app's current category in the backup (DrawerItem.categoryId) and only move it when a rule below says so, or when its old category is merged away.
+2. Decide by what the app mainly does, not by who made it (Google Maps is Maps, not "Google"; an email app is communication, not Web).
+3. Specific beats general: a banking app goes to Money even if it also shops, a chat feature inside a social app stays in Social, a music app goes to Music even if it streams video.
+4. Keep app families together (for example two apps from the same service, or a main app and its widget or lite version go in the same tab).
+5. Package hints (examples; for anything not listed, judge by the label and package name):
+   - Chat/calls/email: com.whatsapp, org.telegram.messenger, org.thoughtcrime.securesms, com.google.android.apps.messaging, com.google.android.gm, com.microsoft.office.outlook, ch.protonmail.android
+   - Social: com.instagram.android, com.facebook.katana, com.zhiliaoapp.musically, com.reddit.frontpage, com.snapchat.android, com.linkedin.android
+   - AI: com.openai.chatgpt, com.anthropic.claude, ai.x.grok, com.google.android.apps.bard
+   - Web: com.android.chrome, org.mozilla.firefox, browsers; app stores such as com.android.vending
+   - Media/Music: com.google.android.youtube, com.netflix.mediaclient; com.spotify.music
+   - Navigation/Travel: com.google.android.apps.maps; public transport, airline and booking apps
+   - Money: banks, com.paypal.android.p2pmobile, com.revolut.revolut, investing and payment apps
+   - Shopping: webshops, supermarkets, delivery and ticket apps
+   - Camera: com.google.android.GoogleCamera, gallery and photo apps
+   - System/security: settings, authenticators, password managers, VPNs, cleaners
+6. Don't ask about individual apps. Put each in its best fit, and in the proposal list at most five borderline apps ("X could also go in Y") so the user can move them.
+7. Anything left over goes to Tools. If one tab would hold more than about a third of all apps, split it by purpose before showing the proposal (for example Tools and System).
+8. Process apps A–Z by label so the same input gives the same output.
+
 ## Conversation flow
 
 The user sees 6 steps: 1 Your apps · 2 Your preferences · 3 Categories · 4 Home screen · 5 Thumb order · 6 Build. Use exactly these names and numbers in the progress cue only.
