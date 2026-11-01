@@ -42,7 +42,7 @@ Smart Launcher's docs list editable tabs as a Pro feature. This was tested on Pr
 
 ## Tested
 
-Tested on a real backup with 396 apps (about 0 hidden, 6 tabs built-in plus custom ones; 14 loose home screen apps and 3 folders). Restored on a real phone with Smart Launcher 6 Pro (backup data version 64): tabs, icons, folders, moved home icons, and drawer ordering for left and right handed with "stack apps from the bottom" on and off. Other versions may differ.
+Tested on a real backup with 396 apps, none hidden, sorted into 6 tabs. The result was 8 tabs, with 14 loose home screen apps, 3 folders and the dock (8 apps). The new tabs, icons, folders, moved icons, dock and drawer order all came through on the phone. Restored on a real phone with Smart Launcher 6 Pro (backup data version 64): tabs, icons, folders, moved home icons, and drawer ordering for left and right handed with "stack apps from the bottom" on and off. Other versions may differ.
 
 ## If something goes wrong
 
