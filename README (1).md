@@ -1,0 +1,45 @@
+# Smart Launcher reorganiser (prompt)
+
+A prompt for an AI that can open files and run Python. You give it your Smart Launcher backup (.slbk), answer a few questions, and it gives you a new backup with a tidier app drawer and home screen.
+
+Unofficial and made with AI. Your original backup is never changed, so keep it as a fallback.
+
+## What it does
+
+- Sorts your apps into tabs, with names and icons you agree on
+- Hides clutter you approve
+- Moves home screen icons and creates home screen folders
+- Arranges tabs, home screen icons and (if you want) the dock for your thumb, left or right handed
+- Optionally orders the apps inside each drawer tab by how much you use them. This follows your "stack apps from the bottom" setting (on: bottom up, off: top down) and switches the drawer to manual order
+- Asks which language to chat in and which language the tab and folder names should be in
+
+It doesn't touch widgets, custom icons or anything else in the backup. It checks the new file before handing it over.
+
+## How to use it
+
+1. In Smart Launcher's settings, make a backup and copy the .slbk file somewhere you can reach it.
+2. Open an AI that can open files and run Python. Give it `SmartLauncher_Reorganiser_agent.md` as the instructions.
+3. Attach your .slbk file and answer its questions.
+4. Restore the new file in Smart Launcher (settings, backup/restore). If the lock-screen wallpaper resets, set it again.
+
+## Which AI
+
+It has to accept the backup (it's a zip: rename it to .zip if the upload is refused), extract it, run code and hand back a new file. Claude works, this was built and tested with it. ChatGPT and Grok should work too. I'm not sure about Gemini: its app limits zips to 10 files and a backup has more.
+
+## Privacy
+
+The default backup from Smart Launcher has your app list, layout, launch counts, cached news headlines, your wallpaper, a screenshot of your home screen (check it for calendar items) and the launcher's settings. The settings include your phone model and a last known location (probably for the weather). In the backup I checked there were no emails, phone numbers, passwords or contact names.
+
+Worth a look before you upload it to a cloud AI. To remove the location: rename the backup to .zip, delete the whole `last_position` line in `shared_prefs/ginlemon.flowerfree.xml` and rename it back. Restoring a backup edited like this works, but the launcher writes the location again by itself, so repeat it for each new backup. The wallpaper and screenshot stay inside, so check those yourself. Don't post your backup publicly.
+
+## Free or Pro
+
+Smart Launcher's docs list editable tabs as a Pro feature. This was tested on Pro: restoring a backup with new, renamed and reordered tabs (with icons), moved apps, a home screen folder and moved home icons all worked. I don't know what the free version does with custom tabs. If you're on free, check the first result on your phone before going further.
+
+## Tested
+
+Restored on a real phone with Smart Launcher 6 Pro (backup data version 64): tabs, icons, folders, moved home icons, and drawer ordering for left and right handed with "stack apps from the bottom" on and off. Other versions may differ.
+
+## Tab icons
+
+A tab's icon comes from a hidden category ID, not from its name. Most IDs give a blank folder, including `ai`, `money`, `health` and `photo`. Use `education` for AI, `finance` for money, `fitness` for health and `camera` for photos. The prompt has the full list and picks them for you.
