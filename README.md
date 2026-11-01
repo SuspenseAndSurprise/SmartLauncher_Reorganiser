@@ -23,7 +23,7 @@ It doesn't touch widgets, custom icons or anything else in the backup. It checks
 ## How to use it
 
 1. In Smart Launcher's settings, make a backup and copy the .slbk file somewhere you can reach it.
-2. Open an AI that can open files and run Python. Give it `SmartLauncher_Reorganiser_agent.md` as the instructions.
+2. Open an AI that can open files and run Python. Copy the whole text of `SmartLauncher_Reorganiser_agent.md` and paste it into the AI as your first message (or attach the file if it accepts it).
 3. Attach your .slbk file and answer its questions.
 4. Restore the new file in Smart Launcher (settings, backup/restore). If the lock-screen wallpaper resets, set it again.
 
