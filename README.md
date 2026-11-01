@@ -28,7 +28,7 @@ It has to accept the backup (it's a zip: rename it to .zip if the upload is refu
 
 - Claude and Grok worked in testing.
 - ChatGPT, Copilot and others may work, depending on their current limits. Not tested.
-- Gemini: its app limits zips to 10 files and a backup has more, so it probably won't work.But I'm not sure, you might have different resu2of different tier models. 
+- Gemini: its app limits zips to 10 files and a backup has more, so it probably won't work.But I'm not sure, you might have different results on various tier models. 
 
 ## Privacy
 
