@@ -10,7 +10,7 @@ Unofficial. Built with AI assistance and tested on a real phone. Your original b
 - Hides clutter you approve
 - Moves home screen icons and creates home screen folders
 - Arranges tabs, home screen icons and (if you want) the dock for your thumb, left or right handed
-- Optionally orders the apps inside each drawer tab by how much you use them. This follows your "stack apps from the bottom" setting (on: bottom up, off: top down) and switches the drawer to manual order
+- Optionally orders the apps inside each drawer tab by how much you use them. This follows your "stack apps from the bottom" setting (on: bottom up, off: top down) and switches the drawer sort from "By used" to "By user" (a custom order). You can switch it back in Smart Launcher's settings
 - Asks which language to chat in and which language the tab and folder names should be in
 
 It doesn't touch widgets, custom icons or anything else in the backup. It checks the new file before handing it over.
