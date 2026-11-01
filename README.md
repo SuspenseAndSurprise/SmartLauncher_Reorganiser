@@ -1,8 +1,8 @@
-# Smart Launcher reorganiser (prompt)
+# Smart Launcher reorganiser – AI prompt for tidying your drawer & home screen
 
 A prompt for an AI that can open files and run Python. You give it your Smart Launcher backup (.slbk), answer a few questions, and it gives you a new backup with a tidier app drawer and home screen.
 
-Unofficial and made with AI. Your original backup is never changed, so keep it as a fallback.
+Unofficial. Built with AI assistance and tested on a real phone. Your original backup is never changed, so keep it as a fallback.
 
 ## What it does
 
@@ -39,6 +39,19 @@ Smart Launcher's docs list editable tabs as a Pro feature. This was tested on Pr
 ## Tested
 
 Restored on a real phone with Smart Launcher 6 Pro (backup data version 64): tabs, icons, folders, moved home icons, and drawer ordering for left and right handed with "stack apps from the bottom" on and off. Other versions may differ.
+
+## If something goes wrong
+
+Your original backup is never changed. Restore it in Smart Launcher (settings, backup/restore) and you're back where you were. Anything you changed on the phone after making that backup is lost, so make a fresh backup first and copy it to a computer.
+
+If Smart Launcher crashes or won't respond after a restore (I haven't seen this happen, but other versions might differ):
+
+1. Open Settings anyway. The notification shade and the Settings app don't need the launcher.
+2. Set your phone's own launcher as default: Settings > Apps > Default apps > Home app.
+3. Clear Smart Launcher's data or reinstall it (Settings > Apps > Smart Launcher > Storage > Clear data), open it and restore your original backup.
+4. If the screen is frozen, start the phone in safe mode (hold the power button, long-press "Power off", confirm). It loads the stock launcher. Then do step 3.
+
+Menus differ per phone brand. Search your phone's brand plus "safe mode" or "change default launcher" if you get stuck. Your backup files stay on the phone's storage when you clear data, but keep a copy on a computer.
 
 ## Tab icons
 
