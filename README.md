@@ -24,7 +24,11 @@ It doesn't touch widgets, custom icons or anything else in the backup. It checks
 
 ## Which AI
 
-It has to accept the backup (it's a zip: rename it to .zip if the upload is refused), extract it, run code and hand back a new file. Claude works, this was built and tested with it. ChatGPT and Grok should work too. I'm not sure about Gemini: its app limits zips to 10 files and a backup has more.
+It has to accept the backup (it's a zip: rename it to .zip if the upload is refused), extract it, run code and hand back a new file.
+
+- Claude and Grok worked in testing.
+- ChatGPT, Copilot and others may work, depending on their current limits. Not tested.
+- Gemini: its app limits zips to 10 files and a backup has more, so it probably won't work.
 
 ## Privacy
 
