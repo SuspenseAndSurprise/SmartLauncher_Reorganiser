@@ -60,3 +60,14 @@ Menus differ per phone brand. Search your phone's brand plus "safe mode" or "cha
 ## Tab icons
 
 A tab's icon comes from a hidden category ID, not from its name. Most IDs give a blank folder, including `ai`, `money`, `health` and `photo`. Use `education` for AI, `finance` for money, `fitness` for health and `camera` for photos. The prompt has the full list and picks them for you.
+
+
+## SmartLauncher_Reorganiser_untested_python.zip 
+
+The Python version does the same job as the AI prompt, but without needing an AI that can run code. The chat only plans, and two small scripts do the file work on your computer.
+Inspect (1_inspect.bat or slb_inspect.py): reads your backup and prints a text report of your apps, home screen, dock, and launch counts. Nothing is changed.
+Chat: you paste the report into any chat model. It groups your apps into tabs, proposes the home screen and thumb order, and writes a plan.json file.
+Apply (2_apply.bat or slb_apply.py): runs that plan on your original backup and writes a new backup_v1.slbk. It checks the result first. If a check fails, it stops and writes nothing.
+Restore backup_v1.slbk in Smart Launcher.
+Optional: 0_scrub_location.bat removes the last known location from a copy of the backup before you share it.
+Two limits: it only changes the drawer order and tabs, and home screen moves and folders. It doesn't create a dock and leaves widgets and custom icons alone. It needs Python 3.8 or newer on your computer.
